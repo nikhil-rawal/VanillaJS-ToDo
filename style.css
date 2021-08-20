@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(120deg, #f6d365, #fda085);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form button {
+  color: #fda085;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  color: white;
+  background: #fda085;
+}
+
+.todo__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo__list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  transition: all 0.5s ease;
+  margin: 0.5rem;
+  background: rgba(255, 255, 255, 0.789);
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo li {
+  flex: 1;
+}
+.todo__item {
+  padding: 0rem 0.5rem;
+}
+
+.check__Button,
+.trash__Button {
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.check__Button {
+  background: #75da54;
+}
+.trash__Button {
+  background: #d1904a;
+}
+.check__Button:hover,
+.trash__Button:hover {
+  transform: scale(1.25);
+}
+
+.todo:hover {
+  background: white;
+}
+.todo:hover .check__Button {
+  background: #5cd833;
+}
+.todo:hover .trash__Button {
+  background: #d38f2a;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.check__animation {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.trash__animation {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  color: #ff6f47;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+.select::after {
+  transition: all 0.4s ease;
+  transform: translateY(-0.25rem);
+  height: 200%;
+  content: "\25BC";
+  position: absolute;
+  background: #ff6f47;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+.select:hover::after {
+  /* transition: all 0.1s ease; */
+  transform: translateY(0.05rem);
+  background: white;
+  color: #ff6f47;
+}
